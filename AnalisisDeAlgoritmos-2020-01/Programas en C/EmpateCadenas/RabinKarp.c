@@ -35,7 +35,7 @@ buscar (char patron[], char texto[], int primo)
   int t = 0;			// hash de texto 
   int h = 1;
 
-  for (i = 0; i < M - 1; i++)
+  for (i = 0; i < M - 1; i++)  //El valor de h sera pow(d, M-1)%primo
     h = (h * d) % primo;
 
   for (i = 0; i < M; i++)
