@@ -23,8 +23,7 @@ main ()
   return 0;
 }
 
-void
-buscar (char patron[], char texto[], int primo)
+void buscar (char patron[], char texto[], int primo)
 {
   int M = strlen (patron);
   int N = strlen (texto);
