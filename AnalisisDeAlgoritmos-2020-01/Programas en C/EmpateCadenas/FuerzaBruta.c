@@ -18,7 +18,7 @@ main ()
 
   scanf ("%d", &opc);
 
-  system ("clc");
+  system("clear");
 
   switch (opc)
     {
@@ -88,6 +88,8 @@ cadenaPre ()
 
   printf ("Cadena\n");		//Pide Cadena
   scanf ("%s", &cad);
+  
+  system("clear");
 
   printf ("\nPatron\n");	//Pide Patron
   scanf ("%s", &pat);
