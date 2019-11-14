@@ -31,8 +31,8 @@ buscar (char patron[], char texto[], int primo)
 
   int i, j;
 
-  int p = 0;			// hash de patron
-  int t = 0;			// hash de texto 
+  int hashpatron = 0;			// hash de patron
+  int hashtexto = 0;			// hash de texto 
   int h = 1;
 
   for (i = 0; i < M - 1; i++)  //El valor de h sera pow(d, M-1)%primo
@@ -40,15 +40,15 @@ buscar (char patron[], char texto[], int primo)
 
   for (i = 0; i < M; i++)
     {				//Calcular el hash de patron y la primera ventana
-      p = (d * p + patron[i]) % primo;
-      t = (d * t + texto[i]) % primo;
+      hashpatron = (d * hashpatron + patron[i]) % primo;
+      hashtexto = (d * hashtexto + texto[i]) % primo;
 
     }
 
   for (i = 0; i <= N - M; i++)
     {				// recorremos el texto uno a uno
 
-      if (p == t)
+      if (hashpatron == hashtexto)
 	{			//Si los hash del la ventana y el patron son 
 	  //iguales, verificamos
 
@@ -65,10 +65,10 @@ buscar (char patron[], char texto[], int primo)
 
       if (i < N - M)
 	{			//Calculamos el hash de la ventana
-	  t = (d * (t - texto[i] * h) + texto[i + M]) % primo;
+	  hashtexto = (d * (hashtexto - texto[i] * h) + texto[i + M]) % primo;
 
-	  if (t < 0)
-	    t = (t + primo);
+	  if (hashtexto < 0)
+	    hashtexto = (hashtexto + primo);
 	}
     }
 }
