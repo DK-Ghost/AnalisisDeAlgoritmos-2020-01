@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define d 1223
+#define d 117
 
 void buscar (char patron[], char texto[], int primo);
 
@@ -16,7 +16,7 @@ main ()
   printf ("Ingresar el patron: ");
   scanf ("%s", patron);
 
-  int primo = 11;
+  int primo = 1223;
   buscar (patron, texto, primo);
 
 
